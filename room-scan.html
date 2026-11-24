@@ -238,7 +238,7 @@ function drawBG(){
   const r=[f[1]/fl,-f[0]/fl,0];
   const u=[r[1]*f[2]-r[2]*f[1], r[2]*f[0]-r[0]*f[2], r[0]*f[1]-r[1]*f[0]];
   const t=Math.tan(0.5), a=cv.width/cv.height;
-  const corner=(sx,sy)=>[f[0]+sx*a*t*r[0]+sy*t*(-u[0]), f[1]+sx*a*t*r[1]+sy*t*(-u[1]), f[2]+sx*a*t*r[2]+sy*t*(-u[2])];
+  const corner=(sx,sy)=>[f[0]+sx*a*t*r[0]+sy*t*u[0], f[1]+sx*a*t*r[1]+sy*t*u[1], f[2]+sx*a*t*r[2]+sy*t*u[2]];
   const c00=corner(-1,-1), c10=corner(1,-1), c01=corner(-1,1), c11=corner(1,1);
   const data=new Float32Array([
     -1,-1,...c00,  1,-1,...c10,  -1,1,...c01,
